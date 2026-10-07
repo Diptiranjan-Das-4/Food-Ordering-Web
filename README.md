@@ -86,17 +86,15 @@ It also includes a dedicated admin panel for managing foods, customers, orders, 
 
 - Razorpay Test Mode
 
-
-
 ## 📁 Project Structure
 
+<pre>
 Food-Ordering-Web/
 │
 ├── admin/
 │   ├── src/
 │   ├── public/
-│   ├── package.json
-│   └── vite.config.js
+│   └── package.json
 │
 ├── backend/
 │   ├── config/
@@ -104,22 +102,21 @@ Food-Ordering-Web/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
-│   ├── server.js
 │   ├── createAdmin.js
+│   ├── server.js
 │   └── package.json
 │
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   └── data/
 │   ├── index.html
 │   └── package.json
 │
 ├── .gitignore
 └── README.md
+</pre>
+
+
 
 ## 💳 Razorpay Test Mode
 
