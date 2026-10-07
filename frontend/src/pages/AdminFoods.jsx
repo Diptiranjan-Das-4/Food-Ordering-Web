@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminFoods() {
     const { getToken } = useAuth();
@@ -17,7 +18,7 @@ function AdminFoods() {
             setError("");
 
             const response = await axios.get(
-                "http://localhost:5000/api/foods"
+                `${API_URL}/api/foods/${id}`
             );
 
             setFoods(response.data);
@@ -46,7 +47,7 @@ function AdminFoods() {
 
         try {
             await axios.delete(
-                `http://localhost:5000/api/foods/${id}`,
+                `${API_URL}/api/foods/${id}`,
                 {
                     headers: {
                         Authorization:

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminOrders() {
     const { getToken } = useAuth();
@@ -31,7 +32,7 @@ function AdminOrders() {
             setError("");
 
             const response = await axios.get(
-                "http://localhost:5000/api/orders",
+                `${API_URL}/api/orders`,
                 {
                     headers: {
                         Authorization:
@@ -62,7 +63,7 @@ function AdminOrders() {
     ) {
         try {
             await axios.put(
-                `http://localhost:5000/api/orders/${orderId}/status`,
+                `${API_URL}/api/orders/${orderId}/status`,
                 {
                     orderStatus
                 },

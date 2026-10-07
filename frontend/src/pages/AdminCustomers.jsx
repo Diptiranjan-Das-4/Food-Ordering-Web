@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
+
 
 function AdminCustomers() {
     const { getToken } = useAuth();
@@ -17,7 +19,7 @@ function AdminCustomers() {
             setError("");
 
             const response = await axios.get(
-                "http://localhost:5000/api/customers",
+                `${API_URL}/api/customers`,
                 {
                     headers: {
                         Authorization: `Bearer ${getToken()}`

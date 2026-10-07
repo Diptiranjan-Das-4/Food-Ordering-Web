@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function MyOrders() {
     const { getToken, isLoggedIn } = useAuth();
@@ -20,7 +21,7 @@ function MyOrders() {
 
             try {
                 const response = await axios.get(
-                    "http://localhost:5000/api/orders/my-orders",
+                    `${API_URL}/api/orders/my-orders`,
                     {
                         headers: {
                             Authorization: `Bearer ${getToken()}`

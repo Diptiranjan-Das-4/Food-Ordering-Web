@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminDashboard() {
     const { user, logout, getToken } = useAuth();
@@ -24,7 +25,7 @@ function AdminDashboard() {
         async function loadStats() {
             try {
                 const response = await axios.get(
-                    "http://localhost:5000/api/admin/stats",
+                    `${API_URL}/api/admin/stats`,
                     {
                         headers: {
                             Authorization: `Bearer ${getToken()}`

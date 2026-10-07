@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminEditFood() {
     const { id } = useParams();
@@ -32,7 +33,7 @@ function AdminEditFood() {
         async function loadFood() {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/foods/${id}`
+                    `${API_URL}/api/foods/${id}`
                 );
 
                 const food = response.data;
@@ -91,7 +92,7 @@ function AdminEditFood() {
 
         try {
             await axios.put(
-                `http://localhost:5000/api/foods/${id}`,
+                `${API_URL}/api/foods/${id}`,
                 {
                     ...formData,
                     price: Number(formData.price),

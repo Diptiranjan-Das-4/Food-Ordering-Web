@@ -5,6 +5,7 @@ useNavigate
 } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function Register() {
 const navigate = useNavigate();
@@ -61,7 +62,7 @@ async function handleSubmit(event) {
 
     try {
         const response = await axios.post(
-            "http://localhost:5000/api/auth/register",
+            `${API_URL}/api/auth/register`,
             {
                 name: formData.name,
                 email: formData.email,

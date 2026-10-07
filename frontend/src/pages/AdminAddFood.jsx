@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminAddFood() {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ function AdminAddFood() {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/foods",
+                `${API_URL}/api/foods`,
                 {
                     ...formData,
                     price: Number(formData.price),

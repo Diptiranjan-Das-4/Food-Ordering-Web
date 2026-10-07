@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FoodCard from "./FoodCard";
+import API_URL from "../api";
 
 function PopularFoods({ selectedCategory }) {
 const [foods, setFoods] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
     async function loadFoods() {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/foods"
+                `${API_URL}/api/foods`
             );
 
             const normalizedFoods =

@@ -7,6 +7,7 @@ import {
 import axios from "axios";
 
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function AdminOrderDetails() {
     const { id } = useParams();
@@ -35,7 +36,7 @@ function AdminOrderDetails() {
             setError("");
 
             const response = await axios.get(
-                `http://localhost:5000/api/orders/${id}`,
+                `${API_URL}/api/orders/${id}`,
                 {
                     headers: {
                         Authorization:
@@ -63,7 +64,7 @@ function AdminOrderDetails() {
     async function updateOrderStatus(status) {
         try {
             const response = await axios.put(
-                `http://localhost:5000/api/orders/${id}/status`,
+                `${API_URL}/api/orders/${id}/status`,
                 {
                     orderStatus: status
                 },

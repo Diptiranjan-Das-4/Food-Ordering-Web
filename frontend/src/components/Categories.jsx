@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_URL from "../api";
 
 function Categories({
 selectedCategory,
@@ -12,7 +13,7 @@ useEffect(() => {
     async function loadFoods() {
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/foods"
+                `${API_URL}/api/foods`
             );
 
             const normalizedFoods =

@@ -8,6 +8,7 @@ import axios from "axios";
 
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
+import API_URL from "../api";
 
 function Checkout() {
     const navigate = useNavigate();
@@ -77,7 +78,7 @@ function Checkout() {
 
         const response =
             await axios.post(
-                "http://localhost:5000/api/orders",
+                `${API_URL}/api/orders`,
                 {
                     items: orderItems,
 
@@ -122,7 +123,7 @@ function Checkout() {
         try {
            
 const response = await axios.post(
-    "http://localhost:5000/api/payments/create-order",
+    `${API_URL}/api/payments/create-order`,
     {
         items: cart.map((item) => ({
             food: item._id || item.id,
@@ -190,7 +191,7 @@ const response = await axios.post(
                         try {
                             const verifyResponse =
                                 await axios.post(
-                                    "http://localhost:5000/api/payments/verify",
+                                    `${API_URL}/api/payments/verify`,
                                     {
                                         razorpay_order_id:
                                             paymentResponse.razorpay_order_id,

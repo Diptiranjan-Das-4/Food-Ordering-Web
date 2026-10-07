@@ -6,6 +6,7 @@ useParams
 } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import API_URL from "../api";
 
 function FoodDetails() {
 const { id } = useParams();
@@ -21,7 +22,7 @@ useEffect(() => {
     async function loadFood() {
         try {
             const response = await axios.get(
-                `http://localhost:5000/api/foods/${id}`
+                `${API_URL}/api/foods/${id}`
             );
 
             const apiFood = response.data;
