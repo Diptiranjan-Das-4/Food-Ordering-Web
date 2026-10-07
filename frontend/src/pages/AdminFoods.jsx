@@ -18,7 +18,7 @@ function AdminFoods() {
             setError("");
 
             const response = await axios.get(
-                `${API_URL}/api/foods/${id}`
+                `${API_URL}/api/foods`
             );
 
             setFoods(response.data);
@@ -109,6 +109,7 @@ function AdminFoods() {
                 <div className="admin-page-heading">
 
                     <div>
+
                         <p className="section-subtitle">
                             Food Management
                         </p>
@@ -121,6 +122,7 @@ function AdminFoods() {
                             Add and manage the food items
                             available on your menu.
                         </p>
+
                     </div>
 
                     <Link
@@ -135,17 +137,26 @@ function AdminFoods() {
 
                 {error && (
                     <div className="admin-error">
+
                         <i className="fa-solid fa-circle-exclamation"></i>
+
                         {error}
+
                     </div>
                 )}
 
                 {loading ? (
+
                     <div className="admin-loading">
+
                         <i className="fa-solid fa-spinner fa-spin"></i>
+
                         Loading foods...
+
                     </div>
+
                 ) : foods.length === 0 ? (
+
                     <div className="admin-empty">
 
                         <i className="fa-solid fa-utensils"></i>
@@ -167,12 +178,15 @@ function AdminFoods() {
                         </Link>
 
                     </div>
+
                 ) : (
+
                     <div className="admin-food-table-wrapper">
 
                         <table className="admin-food-table">
 
                             <thead>
+
                                 <tr>
                                     <th>Food</th>
                                     <th>Category</th>
@@ -181,14 +195,17 @@ function AdminFoods() {
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
+
                             </thead>
 
                             <tbody>
 
                                 {foods.map((food) => (
+
                                     <tr key={food._id}>
 
                                         <td>
+
                                             <div className="admin-food-name">
 
                                                 <img
@@ -197,6 +214,7 @@ function AdminFoods() {
                                                 />
 
                                                 <div>
+
                                                     <strong>
                                                         {food.name}
                                                     </strong>
@@ -204,9 +222,11 @@ function AdminFoods() {
                                                     <span>
                                                         ⭐ {food.rating}
                                                     </span>
+
                                                 </div>
 
                                             </div>
+
                                         </td>
 
                                         <td>
@@ -223,6 +243,7 @@ function AdminFoods() {
                                         </td>
 
                                         <td>
+
                                             <span
                                                 className={
                                                     food.isVeg
@@ -234,9 +255,11 @@ function AdminFoods() {
                                                     ? "VEG"
                                                     : "NON-VEG"}
                                             </span>
+
                                         </td>
 
                                         <td>
+
                                             <span
                                                 className={
                                                     food.isAvailable
@@ -248,9 +271,11 @@ function AdminFoods() {
                                                     ? "Available"
                                                     : "Unavailable"}
                                             </span>
+
                                         </td>
 
                                         <td>
+
                                             <div className="admin-food-actions">
 
                                                 <Link
@@ -273,9 +298,11 @@ function AdminFoods() {
                                                 </button>
 
                                             </div>
+
                                         </td>
 
                                     </tr>
+
                                 ))}
 
                             </tbody>
@@ -283,6 +310,7 @@ function AdminFoods() {
                         </table>
 
                     </div>
+
                 )}
 
             </section>
