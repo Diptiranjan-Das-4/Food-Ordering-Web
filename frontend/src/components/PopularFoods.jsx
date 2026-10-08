@@ -78,13 +78,19 @@ return (
 
             <div className="section-heading">
 
-                <p className="section-subtitle">
-                    {selectedCategory ===
-                    "Popular"
-                        ? "Customer Favorites"
-                        : "Category"}
-                </p>
+               {/* <p
+    className={
+        selectedCategory === "Popular"
+            ? "section-subtitle customer-favorites"
+            : "section-subtitle"
+    }
+>
+    {selectedCategory === "Popular"
+        ? " Customer Favorites"
 
+        : "Category"}
+</p> */}
+<p>•</p>
                 <h2>
 
                     {selectedCategory ===

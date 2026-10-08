@@ -94,11 +94,14 @@ function Footer() {
 
                         <ul>
                             <li>
+                                🥇 Ownre: Diptiranjan Das
+                            </li>
+                            <li>
                                 📍 Bhubaneswar, Odisha
                             </li>
 
                             <li>
-                                📞 +91 98765 43210
+                                📞 +91 91245 31811
                             </li>
 
                             <li>
