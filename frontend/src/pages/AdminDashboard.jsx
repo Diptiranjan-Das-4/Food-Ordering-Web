@@ -1,12 +1,19 @@
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
+
+
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import API_URL from "../api";
 
 function AdminDashboard() {
     const { user, logout, getToken } = useAuth();
+    
+const navigate = useNavigate();
+
+
 
     const [stats, setStats] = useState({
         foods: 0,
@@ -76,7 +83,7 @@ function AdminDashboard() {
                         <button
                             type="button"
                             className="admin-logout"
-                            onClick={logout}
+                            onClick={() => { logout(); navigate("/"); }}
                         >
                             <i className="fa-solid fa-right-from-bracket"></i>
                             Logout

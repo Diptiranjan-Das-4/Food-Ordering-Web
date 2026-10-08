@@ -199,7 +199,7 @@ function AdminLogin() {
 
                     </form>
 
-                    <div className="auth-footer">
+                    <div className="auth-switch">
 
                         <p>
                             Are you a customer?

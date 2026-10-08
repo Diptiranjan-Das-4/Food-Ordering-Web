@@ -103,7 +103,7 @@ function Login() {
                             Email
                         </label>
 
-                        <div className="input-wrapper">
+                        <div className="auth-input">
                             <i className="fa-solid fa-envelope"></i>
 
                             <input
@@ -125,7 +125,7 @@ function Login() {
                             Password
                         </label>
 
-                        <div className="input-wrapper">
+                        <div className="auth-input">
                             <i className="fa-solid fa-lock"></i>
 
                             <input
